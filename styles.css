@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Cedar Creek Care Home (Demo #2) — Warm Espresso, Bronze & Linen Theme
+   ========================================================================== */
+
+:root {
+  --color-espresso: #1E1A17;
+  --color-espresso-light: #2B2520;
+  --color-bronze: #8E6542;
+  --color-bronze-light: #C8A078;
+  --color-linen: #F8F5F0;
+  --color-stone-warm: #EDE7DD;
+  --color-ink: #221E1B;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-linen);
+  color: var(--color-ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.015em;
+}
+
+/* ADA-accessible focus rings */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2.5px solid var(--color-bronze-light);
+  outline-offset: 3px;
+}
+
+/* Navbar scroll transition */
+.site-nav {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-nav.is-scrolled {
+  background-color: rgba(26, 22, 19, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Frosted dark espresso glass card in hero */
+.glass-tour-card {
+  background: rgba(28, 23, 19, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* FAQ chevron animation */
+.faq-chevron {
+  transition: transform 0.25s ease;
+}
+
+button[aria-expanded="true"] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .site-nav,
+  .faq-chevron {
+    transition: none;
+  }
+}

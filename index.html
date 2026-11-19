@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cedar Creek Care Home | 6-Bed Residential Assisted Living in Austin, TX</title>
+  <meta name="description" content="A quiet, owner-operated 6-bed residential assisted living home in Austin, TX. Private rooms, scratch-cooked meals, and 24/7 attentive care." />
+
+  <!-- Google Fonts: Playfair Display (Architectural Serif) + DM Sans (Crisp Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN + Warm Espresso & Bronze Palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#1E1A17',
+            'espresso-mid': '#2B2520',
+            bronze: '#8E6542',
+            'bronze-dark': '#735032',
+            'bronze-light': '#C8A078',
+            linen: '#F8F5F0',
+            warmstone: '#EDE7DD',
+            ink: '#221E1B',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-linen text-ink antialiased">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-espresso focus:text-white focus:px-4 focus:py-2 focus:rounded-md">
+    Skip to main content
+  </a>
+
+  <!-- ===================================================================
+       TRANSPARENT FLOATING HEADER (Turns Solid Espresso on Scroll)
+       =================================================================== -->
+  <header id="site-header" class="site-nav fixed top-0 inset-x-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+
+        <!-- Architectural Roofline Emblem + Serif Brand -->
+        <a href="#top" class="flex items-center gap-3 group shrink-0">
+          <svg class="w-10 h-10 text-[#C8A078] shrink-0" viewBox="0 0 48 36" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 26L18 11L29 22" />
+            <path d="M19 19L30 8L44 23" />
+            <path d="M12 29H36" stroke-opacity="0.55" stroke-width="1.8" />
+          </svg>
+          <div>
+            <span class="block font-serif text-lg sm:text-xl font-semibold text-white leading-none whitespace-nowrap" data-brand-name>Cedar Creek</span>
+            <span class="block text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium mt-1 whitespace-nowrap">Care Home</span>
+          </div>
+        </a>
+
+        <!-- Clean Single-Line Nav Links -->
+        <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-white/90" aria-label="Main Navigation">
+          <a href="#top" class="whitespace-nowrap hover:text-[#C8A078] transition">Home</a>
+          <a href="#about" class="whitespace-nowrap hover:text-[#C8A078] transition">About</a>
+          <a href="#care" class="whitespace-nowrap hover:text-[#C8A078] transition">Care</a>
+          <a href="#gallery" class="whitespace-nowrap hover:text-[#C8A078] transition">Gallery</a>
+          <a href="#faq" class="whitespace-nowrap hover:text-[#C8A078] transition">FAQ</a>
+          <a href="#hospital-discharge" class="whitespace-nowrap hover:text-[#C8A078] transition">Discharge</a>
+        </nav>
+
+        <!-- Phone + White-Outlined Pill CTA -->
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="tel:5125550182" data-brand-phone-link class="hidden sm:inline-block whitespace-nowrap text-sm font-medium text-white/90 hover:text-white transition" data-brand-phone>
+            (512) 555-0182
+          </a>
+          <a href="#hero-tour-card" class="hidden sm:inline-flex items-center justify-center whitespace-nowrap border border-white/60 hover:bg-white hover:text-[#1E1A17] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
+            Book a tour
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20 transition" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#1E1A17]/95 backdrop-blur-md rounded-2xl mb-4 p-4 border border-white/15 space-y-1.5 text-white">
+        <a href="#top" class="block px-3 py-2.5 rounded-lg hover:bg-white/10 text-base font-medium">Home</a>
+        <a href="#about" class="block px-3 py-2.5 rounded-lg hover:bg-white/10 text-base font-medium">About</a>
+        <a href="#care" class="block px-3 py-2.5 rounded-lg hover:bg-white/10 text-base font-medium">Care</a>
+        <a href="#gallery" class="block px-3 py-2.5 rounded-lg hover:bg-white/10 text-base font-medium">Gallery</a>
+        <a href="#faq" class="block px-3 py-2.5 rounded-lg hover:bg-white/10 text-base font-medium">FAQ</a>
+        <div class="pt-3 flex flex-col gap-2">
+          <a href="#hero-tour-card" class="w-full text-center bg-white text-[#1E1A17] font-semibold py-3 rounded-full">Book a Tour</a>
+          <a href="tel:5125550182" data-brand-phone-link class="w-full text-center border border-white/30 text-white font-semibold py-3 rounded-full">Call <span data-brand-phone>(512) 555-0182</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===================================================================
+         FULL-BLEED EXTERIOR HERO + FLOATING GLASS TOUR FORM
+         =================================================================== -->
+    <section id="top" class="relative min-h-[760px] flex items-center overflow-hidden bg-[#1E1A17] text-white pt-28 pb-16 lg:py-28">
+      <!-- Residential Craftsman Home Exterior Photo -->
+      <img
+        src="https://images.unsplash.com/photo-1788295892453-983e90267808?auto=format&fit=crop&w=1800&q=85"
+        alt="Quiet residential assisted living home with wide welcoming front porch and trees"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
+      <!-- Warm Dark Espresso Vignette Overlay -->
+      <div
+        class="absolute inset-0"
+        style="background: linear-gradient(100deg, rgba(22, 19, 16, 0.86) 0%, rgba(28, 24, 20, 0.68) 52%, rgba(24, 20, 17, 0.56) 100%);"
+      ></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- Left Column: Editorial Headline + Pill Buttons + Inline 4-Stat Strip -->
+          <div class="lg:col-span-7 space-y-6">
+            <p class="text-xs sm:text-[13px] font-medium uppercase tracking-[0.2em] text-white/80">
+              Residential Assisted Living · <span data-brand-city>Austin, Texas</span>
+            </p>
+
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-[70px] font-semibold text-white leading-[1.04]">
+              Welcome <span class="italic font-normal text-[#EAE0D2]">Home.</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl font-normal">
+              A quiet family house on a tree-lined street in <span data-brand-city>Austin</span>, with sunlit private suites, home-cooked meals, and dedicated caregivers beside your loved one around the clock.
+            </p>
+
+            <!-- Dual Pill Buttons -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-2">
+              <a href="#hospital-discharge" class="inline-flex items-center justify-center bg-[#8E6542] hover:bg-[#735032] text-white font-medium px-6 py-3.5 rounded-full shadow-lg transition text-sm sm:text-base">
+                Coming from the hospital
+              </a>
+              <a href="tel:5125550182" data-brand-phone-link class="inline-flex items-center justify-center bg-black/25 hover:bg-white/15 backdrop-blur-sm text-white border border-white/40 font-medium px-6 py-3.5 rounded-full transition text-sm sm:text-base">
+                Call <span class="ml-1.5" data-brand-phone>(512) 555-0182</span>
+              </a>
+            </div>
+
+            <!-- Bottom Hairline Divider + 4 Architectural Metrics -->
+            <div class="pt-6 mt-4 border-t border-white/20 grid grid-cols-2 sm:grid-cols-4 gap-5">
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-white">6</p>
+                <p class="text-xs text-white/75 mt-0.5">Residents maximum</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-white">24/7</p>
+                <p class="text-xs text-white/75 mt-0.5">Awake care staff</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-white">Private</p>
+                <p class="text-xs text-white/75 mt-0.5">Furnished suites</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-white">Owner</p>
+                <p class="text-xs text-white/75 mt-0.5">Led &amp; overseen</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Frosted-Glass Embedded Tour Form -->
+          <div id="hero-tour-card" class="lg:col-span-5">
+            <div class="glass-tour-card rounded-2xl p-6 sm:p-8 shadow-2xl">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C8A078]">
+                Private Tours, Seven Days a Week
+              </p>
+              <h2 class="font-serif text-2xl sm:text-[26px] font-semibold text-white mt-1.5">
+                Come and See the Home
+              </h2>
+
+              <form id="hero-tour-form" class="mt-6 space-y-4" novalidate>
+                <div>
+                  <label for="hero-visitor-name" class="block text-xs font-medium text-white/80 mb-1.5">Your name</label>
+                  <input
+                    id="hero-visitor-name"
+                    type="text"
+                    required
+                    placeholder="e.g., Michael Carter"
+                    class="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-[#C8A078] focus:bg-white/15 focus:ring-0 transition"
+                  />
+                </div>
+
+                <div>
+                  <label for="hero-visitor-contact" class="block text-xs font-medium text-white/80 mb-1.5">Phone or email</label>
+                  <input
+                    id="hero-visitor-contact"
+                    type="text"
+                    required
+                    placeholder="(512) 555-0149 or name@email.com"
+                    class="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-[#C8A078] focus:bg-white/15 focus:ring-0 transition"
+                  />
+                </div>
+
+                <div>
+                  <label for="hero-care-for" class="block text-xs font-medium text-white/80 mb-1.5">Who is the care for?</label>
+                  <select
+                    id="hero-care-for"
+                    class="w-full rounded-xl bg-[#2C2621] border border-white/15 px-4 py-3 text-sm text-white focus:border-[#C8A078] focus:ring-0 transition"
+                  >
+                    <option value="parent">My mother or father</option>
+                    <option value="spouse">My spouse or partner</option>
+                    <option value="patient">A hospital / rehab patient</option>
+                    <option value="other">Another loved one</option>
+                  </select>
+                </div>
+
+                <div class="pt-2 space-y-2.5">
+                  <button
+                    type="submit"
+                    class="w-full bg-white hover:bg-[#EAE0D2] text-[#1E1A17] font-semibold py-3.5 rounded-full shadow-md transition text-sm sm:text-base"
+                  >
+                    Request a tour
+                  </button>
+                  <a
+                    href="tel:5125550182"
+                    data-brand-phone-link
+                    class="w-full block text-center bg-black/25 hover:bg-white/10 text-white border border-white/25 font-medium py-3.5 rounded-full transition text-sm"
+                  >
+                    Call <span data-brand-phone>(512) 555-0182</span>
+                  </a>
+                </div>
+
+                <p class="text-[11px] text-white/60 text-center pt-1 leading-relaxed">
+                  Please do not include medical diagnoses here—we will speak privately by phone.
+                </p>
+              </form>
+
+              <!-- Confirmation Message inside Glass Card -->
+              <div id="hero-tour-success" class="hidden mt-6 py-8 text-center space-y-3 border-t border-white/15">
+                <div class="w-11 h-11 rounded-full bg-[#C8A078] text-[#1E1A17] flex items-center justify-center mx-auto font-bold">✓</div>
+                <h3 class="font-serif text-xl font-semibold text-white">Thank you, <span id="hero-submitted-name">friend</span>.</h3>
+                <p class="text-sm text-white/80">
+                  Our Care Director will call you shortly to confirm a relaxed time to visit our home.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 1: HUMAN-CENTERED OWNER STORY ("NOT A CALL CENTER")
+         =================================================================== -->
+    <section id="about" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200">
+              <img
+                src="https://images.unsplash.com/photo-1596450514537-fae68a81346b?auto=format&fit=crop&w=1000&q=80"
+                alt="Caregiver smiling warmly with senior resident at home"
+                class="w-full h-[400px] object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8E6542]">Direct Family Connection</p>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[42px] font-semibold text-ink leading-tight">
+              You'll Talk to Us—<span class="italic font-normal text-[#8E6542]">Not a Call Center.</span>
+            </h2>
+            <p class="text-base sm:text-lg text-stone-700 leading-relaxed">
+              When you search for senior care, big chains pass you through admissions advisors and call scripts. At <span data-brand-name>Cedar Creek</span> Care Home, the person who answers your call is the person overseeing your parent's meals, safety, and comfort every day.
+            </p>
+            <p class="text-[15px] text-stone-600 leading-relaxed">
+              With a strict maximum of <strong>6 residents</strong> and a <strong>1:3 caregiver ratio</strong>, there is no rushing down long hallways. Caregivers know when your dad likes his coffee, which songs calm your mom, and text you photos of sunny afternoons on the porch.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-6 text-sm font-medium text-ink border-t border-stone-300/70">
+              <span data-brand-license>TX State License #104892</span>
+              <span class="text-stone-400">·</span>
+              <span>Fingerprint-Vetted Staff</span>
+              <span class="text-stone-400">·</span>
+              <span>All-Inclusive Monthly Pricing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2: HOSPITAL DISCHARGE FAST-TRACK
+         =================================================================== -->
+    <section id="hospital-discharge" class="bg-[#1E1A17] text-white py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mb-12">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A078]">Urgent Discharge Placement</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white mt-2">
+            Coming From the Hospital or Rehab?
+          </h2>
+          <p class="text-white/80 mt-3 text-base sm:text-lg">
+            Discharge planners often give families only 24 to 48 hours to find safe care. We simplify every step so your loved one transitions smoothly.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#2B2520] rounded-2xl p-7 border border-white/10">
+            <span class="font-serif text-2xl font-semibold text-[#C8A078]">01</span>
+            <h3 class="font-serif text-xl font-semibold text-white mt-3 mb-2">Same-Day Care Review</h3>
+            <p class="text-sm text-white/75 leading-relaxed">
+              Call us directly. We speak with you and your hospital case manager the same day to review mobility, medications, and room readiness.
+            </p>
+          </div>
+          <div class="bg-[#2B2520] rounded-2xl p-7 border border-white/10">
+            <span class="font-serif text-2xl font-semibold text-[#C8A078]">02</span>
+            <h3 class="font-serif text-xl font-semibold text-white mt-3 mb-2">Suite &amp; Med Preparation</h3>
+            <p class="text-sm text-white/75 leading-relaxed">
+              We ready a furnished private suite, coordinate discharge prescriptions with our local pharmacy, and set up walkers or hospital beds if needed.
+            </p>
+          </div>
+          <div class="bg-[#2B2520] rounded-2xl p-7 border border-white/10">
+            <span class="font-serif text-2xl font-semibold text-[#C8A078]">03</span>
+            <h3 class="font-serif text-xl font-semibold text-white mt-3 mb-2">Peaceful Move-In</h3>
+            <p class="text-sm text-white/75 leading-relaxed">
+              Your loved one arrives within 24–48 hours to a warm meal, calm quiet rooms, and attentive caregivers ready to help them rest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: LEVELS OF CARE & DAILY SUPPORT
+         =================================================================== -->
+    <section id="care" class="py-20 sm:py-24 bg-white border-b border-stone-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8E6542]">Personalized Care</p>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-2">
+              Support That Respects Dignity
+            </h2>
+          </div>
+          <p class="text-sm text-stone-600 max-w-md">
+            All-inclusive care starting at <strong class="text-ink">$5,900/month</strong>—covering private suite, fresh home-cooked meals, laundry, and 24/7 assistance.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-linen rounded-2xl p-8 border border-stone-200/80">
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2">Personal &amp; Daily Living Care</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Gentle, unhurried help with morning dressing, safe showering in roll-in bathrooms, grooming, mobility transfers, incontinence care, and scheduled medications.
+            </p>
+          </div>
+          <div class="bg-linen rounded-2xl p-8 border border-stone-200/80">
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2">Memory &amp; Dementia Support</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Low-stimulation home layout without confusing hallways, door chime alerts, calm daily routines, and familiar caregivers trained in gentle redirection.
+            </p>
+          </div>
+          <div class="bg-linen rounded-2xl p-8 border border-stone-200/80">
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2">Home-Cooked Meals &amp; Nutrition</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Three scratch-made meals daily around our dining table plus warm snacks—tailored for low-sodium, diabetic-friendly, and soft-bite preferences.
+            </p>
+          </div>
+          <div class="bg-linen rounded-2xl p-8 border border-stone-200/80">
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2">Respite &amp; Hospice Coordination</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Short-term stays for caregiver relief or recovery, plus seamless collaboration with mobile doctors, physical therapists, and hospice nurses so residents can age in place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4: INSIDE THE HOME GALLERY
+         =================================================================== -->
+    <section id="gallery" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8E6542]">Inside the Residence</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-2">
+            Warm, Sunlit Spaces Made for Living
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Warm sunlit living room with comfortable seating" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm font-serif font-semibold text-ink">Family Living Room</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1702014861736-d62834317c5e?auto=format&fit=crop&w=900&q=80" alt="Bright private resident bedroom beside window" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm font-serif font-semibold text-ink">Private Resident Suite</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="Clean residential kitchen where meals are cooked fresh" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm font-serif font-semibold text-ink">Home Kitchen</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1504276288612-c18c8df55e05?auto=format&fit=crop&w=900&q=80" alt="Enclosed backyard garden and patio seating" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm font-serif font-semibold text-ink">Enclosed Garden Patio</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 5: FAQ ACCORDION
+         =================================================================== -->
+    <section id="faq" class="bg-white border-t border-stone-200/80 py-20 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8E6542]">Questions &amp; Answers</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-ink mt-2">
+            What Families Ask Most
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-linen rounded-xl border border-stone-200">
+            <button type="button" data-faq-btn aria-expanded="false" aria-controls="d2-faq-1" class="w-full flex items-center justify-between gap-4 p-5 text-left font-serif text-lg font-semibold text-ink">
+              <span>What is included in the monthly rate?</span>
+              <svg class="w-5 h-5 text-[#8E6542] shrink-0 faq-chevron" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+            <div id="d2-faq-1" class="hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed">
+              Your private or companion suite, three home-cooked meals plus snacks daily, housekeeping, personal laundry, medication reminders, and 24/7 personal care are all included—with no surprise "level-of-care" markups.
+            </div>
+          </div>
+
+          <div class="bg-linen rounded-xl border border-stone-200">
+            <button type="button" data-faq-btn aria-expanded="false" aria-controls="d2-faq-2" class="w-full flex items-center justify-between gap-4 p-5 text-left font-serif text-lg font-semibold text-ink">
+              <span>Can we visit freely and bring personal furniture?</span>
+              <svg class="w-5 h-5 text-[#8E6542] shrink-0 faq-chevron" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+            <div id="d2-faq-2" class="hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed">
+              Yes to both! Families are welcome daily, and we encourage bringing a favorite armchair, quilt, and framed photos so the suite feels like home immediately.
+            </div>
+          </div>
+
+          <div class="bg-linen rounded-xl border border-stone-200">
+            <button type="button" data-faq-btn aria-expanded="false" aria-controls="d2-faq-3" class="w-full flex items-center justify-between gap-4 p-5 text-left font-serif text-lg font-semibold text-ink">
+              <span>Do you accept Long-Term Care (LTC) Insurance?</span>
+              <svg class="w-5 h-5 text-[#8E6542] shrink-0 faq-chevron" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+            <div id="d2-faq-3" class="hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed">
+              Yes. We provide all required state licensing documentation and monthly care invoices so families can submit seamless reimbursement claims to their Long-Term Care Insurance provider.
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="#hero-tour-card" class="inline-flex items-center justify-center bg-[#1E1A17] hover:bg-[#352E28] text-white font-semibold px-8 py-4 rounded-full shadow-md transition">
+            Book Your Private Tour Today
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       MINIMALIST ARCHITECTURAL FOOTER
+       =================================================================== -->
+  <footer class="bg-[#1E1A17] text-stone-300 py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <p class="font-serif text-xl font-semibold text-white" data-brand-name>Cedar Creek Care Home</p>
+        <p class="text-sm text-stone-400 mt-1">
+          6-Bed Residential Assisted Living · <span data-brand-city>Austin, Texas</span> · <span data-brand-license>TX License #104892</span>
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 text-sm">
+        <a href="tel:5125550182" data-brand-phone-link class="text-[#C8A078] font-semibold hover:underline" data-brand-phone>(512) 555-0182</a>
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#care" class="hover:text-white transition">Care</a>
+        <a href="#gallery" class="hover:text-white transition">Gallery</a>
+        <a href="#hero-tour-card" class="hover:text-white transition">Book a Tour</a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between text-xs text-stone-500 gap-2">
+      <p>&copy; 2026 <span data-brand-name>Cedar Creek Care Home</span>. All rights reserved.</p>
+      <p>Equal Housing Opportunity · ADA-Conscious Design</p>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
